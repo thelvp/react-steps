@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const messages = [
   'Learn React ⚛️',
-  'Be happy because you know React now 👍',
+  'Be happy because you know React 👍',
   'Apply it in your job and dazzle everyone with your awesome skills ✨',
 ];
 
