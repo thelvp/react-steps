@@ -94,5 +94,7 @@ function Button({color, bgcolor, onClick, children}) {
 // CHILDREN PROP
 // -------------------------------------------------------------
 // - You insert the prop {children} and include it in the component.
-// - Whatever you add between the opening and closing tags of that component, will automatically be passed on as a prop via the children.
-// - So the span inside the Button component above, will be included in the children prop and thus in the Button component.
+// - Whatever you add between the opening and closing tags of that component, will automatically be passed on as a prop via the children. So the span inside the Button component above, will be included in the children prop and thus in the Button component.
+// - TLDR: the children prop allows us to pass JSX into an element (besides regular props)
+// - It's an essential tool to make reusable and configurable components (especially component content)
+// - It's really useful for generic components that don't know their content before being used (e.g. modal, generic buttons)
