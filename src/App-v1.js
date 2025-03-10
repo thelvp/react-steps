@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 
 const messages = [
   'Learn React ⚛️',
@@ -24,11 +24,7 @@ export const App = () => {
 
   return (
     <>
-      <button
-        className='close'
-        onClick={() => setIsOpen(!isOpen)}
-        // -> if isOpen is true: becomes false, if isOpen is false: becomes true
-      >
+      <button className='close' onClick={() => setIsOpen(!isOpen)}>
         &times;
       </button>
 
@@ -43,24 +39,26 @@ export const App = () => {
             Step {step}: {messages[step - 1]}
           </p>
           <div className='buttons'>
-            <button
-              style={{ backgroundColor: '#7950f2', color: '#fff' }}
-              onClick={handlePrevious}
-            >
-              Previous
-            </button>
-            <button
-              style={{ backgroundColor: '#7950f2', color: '#fff' }}
-              onClick={handleNext}
-            >
-              Next
-            </button>
+            <Button color='#fff' bgcolor='#7950f2' onClick={handlePrevious}>
+              <span>👈</span> Previous
+            </Button>
+            <Button color='#fff' bgcolor='#7950f2' onClick={handleNext}>
+              Next <span>👉</span>
+            </Button>
           </div>
         </div>
       )}
     </>
   );
 };
+
+function Button({color, bgcolor, onClick, children}) {
+  return (
+    <button style={{backgroundColor: bgcolor, color: color}} onClick={onClick}>
+      {children}
+    </button>
+  );
+}
 
 // -------------------------------------------------------------
 // UPDATING STATES
@@ -91,3 +89,10 @@ export const App = () => {
 // Comparison with vanilla js - see vanilla.html
 // -------------------------------------------------------------
 // - JS can be seen as imperative DOM manipulation; script set separately from HTML; DOM manipulation. We don't tell React what to do, like we do with JS.
+
+// -------------------------------------------------------------
+// CHILDREN PROP
+// -------------------------------------------------------------
+// - You insert the prop {children} and include it in the component.
+// - Whatever you add between the opening and closing tags of that component, will automatically be passed on as a prop via the children.
+// - So the span inside the Button component above, will be included in the children prop and thus in the Button component.
